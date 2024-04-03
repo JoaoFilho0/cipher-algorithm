@@ -13,15 +13,22 @@ if actionTaken == "cript":
 
     for textChar in textArrayChar:
         if textChar != " ":
-            finalText += functions_cript.criptChar(alphabet, functions_cript.getCharIndex(textChar, alphabet), jumps)
+            finalText += functions_cript.criptChar(alphabet, functions_cript.getCharIndex(textChar, alphabet), jumps) if textChar.islower() else str.upper(functions_cript.criptChar(alphabet, functions_cript.getCharIndex(textChar, alphabet), jumps))
         else:
             finalText += " "
 
     print(finalText)
 
-elif actionTaken == "cript":
+elif actionTaken == "decript":
     textArrayChar = [char for char in text]
+    
+    for textChar in textArrayChar:
+        if textChar != " ":
+            finalText += functions_cript.decriptChar(alphabet, functions_cript.getCharIndex(textChar, alphabet), jumps) if textChar.islower() else str.upper(functions_cript.decriptChar(alphabet, functions_cript.getCharIndex(textChar, alphabet), jumps))
+        else:
+            finalText += " "
 
-    # TODO
+    print(finalText)
+    
 else:
     print("Por favor, informe se deseja criptografar(cript) ou descriptografar(decript).")
